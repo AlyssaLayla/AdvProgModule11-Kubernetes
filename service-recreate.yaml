@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2025-05-30T13:47:23Z"
+  labels:
+    app: spring-petclinic-recreate
+  name: spring-petclinic-recreate
+  namespace: default
+  resourceVersion: "1670"
+  uid: 424b93d1-686e-4261-902f-7ca5f3115ebf
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.107.165.178
+  clusterIPs:
+  - 10.107.165.178
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30192
+    port: 9966
+    protocol: TCP
+    targetPort: 9966
+  selector:
+    app: spring-petclinic-recreate
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
